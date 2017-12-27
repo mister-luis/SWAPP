@@ -15,12 +15,13 @@ class PlanetsList extends Component {
       }
 
       random(){
-        const x = Math.floor((Math.random() * 9) + 1);
+        const x = Math.floor((Math.random() * 7) + 1);
         return x;
     }
     
       getPlanets() {
         const rand = this.random();
+        console.log(rand)
         return axios.get(`https:swapi.co/api/planets/?page=${rand}`)
           .then((response) => {
             console.log(response.data.results)
