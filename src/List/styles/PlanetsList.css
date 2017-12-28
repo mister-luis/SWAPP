@@ -5,6 +5,7 @@
     margin-bottom: 50px;
 }
 .Planets-container{
+    transition: 1s;
     border-radius: 2%;
     display: block;
     flex-direction: column;
