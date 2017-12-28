@@ -21,10 +21,8 @@ class PlanetsList extends Component {
 
     getPlanets() {
         const rand = this.random();
-        console.log(rand)
         return axios.get(`https:swapi.co/api/planets/?page=${rand}`)
             .then((response) => {
-                console.log(response.data.results)
                 this.setState({ planets: response.data.results })
             }
             )
@@ -41,7 +39,6 @@ class PlanetsList extends Component {
             <div className="Planets">
                 {
                     planets.map((p) => {
-                        console.log(p)
                         return (
                             <div className="Planets-container" key={p.url}>
                                 <img className="Container-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" />

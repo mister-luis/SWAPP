@@ -9,9 +9,7 @@ class PeopleList extends Component {
         super(props);
 
         this.state = {
-            people: [],
-            next:null,
-            previous:null
+            people: []
         }
 
         this.getPeople = this.getPeople.bind(this);
@@ -24,13 +22,9 @@ class PeopleList extends Component {
 
     getPeople() {
         const rand = this.random();
-        console.log(rand)
         return axios.get(`https:swapi.co/api/people/?page=${rand}`)
             .then((response) => {
-                console.log(response.data.results)
                 this.setState({ people: response.data.results })
-                this.setState({next: response.data.next})
-                this.setState({previous: response.data.previous})
             }
             )
     }
@@ -41,13 +35,10 @@ class PeopleList extends Component {
     }
     render() {
         const people = this.state.people;
-        const next = this.state.next;
-        console.log(people)
         return (
             <div className="Char">
                 {
                     people.map((p) => {
-                        console.log(p)
                         return (
                             <div className="Char-container" key={p.url}>
                                 <img className="Container-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" />
