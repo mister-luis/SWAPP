@@ -50,9 +50,18 @@ class PeopleList extends Component {
                         console.log(p)
                         return (
                             <div className="Char-container" key={p.url}>
-                                <h1 className="Char-container-name">{p.name}</h1>
-                                <h1 className="Char-container-height">{p.height}</h1>
-                                <CharacterDetails details={p} />
+                                <img className="Container-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" />
+                                <div className="Container-info">
+                                    <div className="Container-name">
+                                        <span>Name:</span>
+                                        <h1 className="Char-container-name">{p.name}</h1>
+                                    </div>
+                                    <div className="Container-height">
+                                        <span>Height:</span>
+                                        <h1 className="Char-container-height">{p.height}</h1>
+                                    </div>
+                                </div>
+                                    <CharacterDetails details={p} />
                             </div>
                         )
                     })

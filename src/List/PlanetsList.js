@@ -6,35 +6,35 @@ class PlanetsList extends Component {
 
     constructor(props) {
         super(props);
-    
-        this.state = {
-          planets: []
-        }
-    
-        this.getPlanets = this.getPlanets.bind(this);
-      }
 
-      random(){
+        this.state = {
+            planets: []
+        }
+
+        this.getPlanets = this.getPlanets.bind(this);
+    }
+
+    random() {
         const x = Math.floor((Math.random() * 7) + 1);
         return x;
     }
-    
-      getPlanets() {
+
+    getPlanets() {
         const rand = this.random();
         console.log(rand)
         return axios.get(`https:swapi.co/api/planets/?page=${rand}`)
-          .then((response) => {
-            console.log(response.data.results)
-            this.setState({ planets: response.data.results })
-          }
-          )
-      }
-    
-    
-    
-      componentDidMount() {
+            .then((response) => {
+                console.log(response.data.results)
+                this.setState({ planets: response.data.results })
+            }
+            )
+    }
+
+
+
+    componentDidMount() {
         this.getPlanets()
-      }
+    }
     render() {
         const planets = this.state.planets;
         return (
@@ -44,9 +44,18 @@ class PlanetsList extends Component {
                         console.log(p)
                         return (
                             <div className="Planets-container" key={p.url}>
-                                <h1 className="Planets-container-name">{p.name}</h1>
-                                <h1 className="Planets-container-height">{p.population}</h1>
-                                <PlanetsDetails details={p}/>
+                                <img className="Container-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" />
+                                <div className="Container-info">
+                                    <div className="Container-name">
+                                        <span>Name:</span>
+                                        <h1 className="Planets-container-name">{p.name}</h1>
+                                    </div>
+                                    <div className="Container-population">
+                                        <span>Population:</span>
+                                        <h1 className="Planets-container-population">{p.population}</h1>
+                                    </div>
+                                </div>
+                                    <PlanetsDetails details={p} />
                             </div>
                         )
                     })

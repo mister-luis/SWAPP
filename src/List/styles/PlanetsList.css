@@ -5,13 +5,34 @@
     margin-bottom: 300px;
 }
 .Planets-container{
+    display: block;
+    flex-direction: column;
     border: 1px solid black;
     margin: 15px;
     color:yellow;
-    background: url('https://cdn.pixabay.com/photo/2016/01/27/15/25/space-1164579_960_720.png');
+    background: url('http://meioambiente.culturamix.com/blog/wp-content/gallery/2_27/fusao-e-brilho-das-estrelas-2.jpg');    
  }
 
 .Planets-container:hover{
     box-shadow: 10px 10px #ccc;
     margin: 10px;
 }
+
+.Container-name, .Container-population{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Container-img{
+    align-self: center;
+}
+
+.Container-info{
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+    min-height: 80px;
+}
+
+

@@ -26,8 +26,8 @@ class PlanetsDetails extends Component {
 
         return (
             <div className="Details">
-                <button className="btnInfo" onClick={this.closeDetails}>X</button>
                 <ul className="Details-list">
+                <button className="btnInfo" onClick={this.closeDetails}>X</button>
                     <li><h2>Name : {info.name}</h2></li>
                     <li><h2>Population : {info.population}</h2></li>
                     <li><h2>Diameter : {info.diameter}</h2></li>
