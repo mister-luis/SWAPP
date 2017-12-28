@@ -1,11 +1,13 @@
 .Details-list{
+    border: 2px solid yellow;
+    opacity: 0.99;
     background: url('http://meioambiente.culturamix.com/blog/wp-content/gallery/2_27/fusao-e-brilho-das-estrelas-2.jpg');
     color: yellow;
     z-index: 1000;
     list-style: none;
     padding: 10px;
     position: relative;
-    /* display: block; */
+border-radius: 10%;
     margin: 50px;
     min-width: 200px;
 }
