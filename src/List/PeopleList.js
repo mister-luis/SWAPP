@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import {Link } from 'react-router-dom';
 import axios from 'axios';
-import CharacterDetails from '../CharacterDetails';
+import People from '../People/People'
 import './styles/PeopleList.css'
 class PeopleList extends Component {
 
@@ -15,7 +14,7 @@ class PeopleList extends Component {
         this.getPeople = this.getPeople.bind(this);
     }
 
-    random(){
+    random() {
         const x = Math.floor((Math.random() * 9) + 1);
         return x;
     }
@@ -36,28 +35,7 @@ class PeopleList extends Component {
     render() {
         const people = this.state.people;
         return (
-            <div className="Char">
-                {
-                    people.map((p) => {
-                        return (
-                            <div className="Char-container" key={p.url}>
-                                <img className="Container-img" src="https://upload.wikimedia.org/wikipedia/commons/6/6c/Star_Wars_Logo.svg" />
-                                <div className="Container-info">
-                                    <div className="Container-name">
-                                        <span>Name:</span>
-                                        <h1 className="Char-container-name">{p.name}</h1>
-                                    </div>
-                                    <div className="Container-height">
-                                        <span>Height:</span>
-                                        <h1 className="Char-container-height">{p.height}</h1>
-                                    </div>
-                                </div>
-                                    <CharacterDetails details={p} />
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            <People people={people} />
         )
     }
 }
